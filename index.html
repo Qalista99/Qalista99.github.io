@@ -16,39 +16,47 @@
 
 *{box-sizing:border-box}
 
-body{margin:0;font-family:Arial,sans-serif;background:#faf8f3;color:#242019}
+body{margin:0;font-family:Arial,sans-serif;background:#faf8f3;color:#28251f}
 
-header{background:#171717;color:#e8d49b;text-align:center;padding:28px 15px}
+header{background:#171717;color:#e8d49b;text-align:center;padding:26px 12px}
 
-header h1{letter-spacing:4px;margin:5px}
+header h1{letter-spacing:3px;margin:5px;font-size:27px}
 
-header p{color:white}
+header p{color:#fff;font-size:13px}
 
-nav{padding:14px;text-align:center;background:#e8d49b}
+nav{background:#e8d49b;text-align:center;padding:13px;font-weight:bold}
 
-nav a{color:#222;text-decoration:none;font-weight:bold}
-
-.hero{text-align:center;padding:45px 18px;background:#eee6d5}
+.hero{text-align:center;padding:45px 16px;background:#eee6d5}
 
 .hero h2{font-size:30px;margin:0 0 12px}
 
-.btn{display:inline-block;background:#171717;color:#fff;padding:13px 20px;border-radius:5px;text-decoration:none;margin-top:10px}
+.hero p{line-height:1.6}
 
-section{padding:25px 16px}
+.btn{display:inline-block;background:#171717;color:white;padding:13px 20px;border:0;border-radius:7px;text-decoration:none;font-size:15px;cursor:pointer}
+
+section{padding:25px 15px}
 
 h2{text-align:center}
 
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
 
-.product{background:white;border:1px solid #e5dfd3;border-radius:10px;padding:18px 10px;text-align:center}
+.product{background:white;border:1px solid #e4ddcf;border-radius:12px;padding:18px 10px;text-align:center;display:flex;flex-direction:column;align-items:center}
 
-.emoji{font-size:52px}
+.emoji{font-size:55px;margin:8px}
 
-.price{font-weight:bold;color:#8a6b24}
+.product h3{font-size:19px;min-height:44px;margin:10px 0}
 
-footer{text-align:center;background:#171717;color:white;padding:25px}
+.price{font-weight:bold;color:#8a6b24;font-size:20px;margin:8px 0 15px}
 
-small{color:#ddd}
+.product button{width:100%;padding:12px 5px;font-size:13px}
+
+.info{text-align:center;line-height:1.7}
+
+footer{background:#171717;color:white;text-align:center;padding:25px}
+
+.note{font-size:12px;color:#666;text-align:center}
+
+@media(min-width:650px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 </style>
 
@@ -82,27 +90,75 @@ small{color:#ddd}
 
 <div class="products">
 
-<div class="product"><div class="emoji">👕</div><h3>Baju Kasual</h3><p class="price">RM 35</p></div>
+<div class="product">
 
-<div class="product"><div class="emoji">👗</div><h3>Baju Wanita</h3><p class="price">RM 49</p></div>
+<div class="emoji">👕</div>
 
-<div class="product"><div class="emoji">👟</div><h3>Kasut Sneakers</h3><p class="price">RM 89</p></div>
+<h3>Baju Kasual</h3>
 
-<div class="product"><div class="emoji">👞</div><h3>Kasut Kasual</h3><p class="price">RM 69</p></div>
+<p class="price">RM 35</p>
+
+<button class="btn" onclick="pesan('Baju Kasual',35)">Pilih & Pesan</button>
+
+</div>
+
+<div class="product">
+
+<div class="emoji">👗</div>
+
+<h3>Baju Wanita</h3>
+
+<p class="price">RM 49</p>
+
+<button class="btn" onclick="pesan('Baju Wanita',49)">Pilih & Pesan</button>
+
+</div>
+
+<div class="product">
+
+<div class="emoji">👟</div>
+
+<h3>Kasut Sneakers</h3>
+
+<p class="price">RM 89</p>
+
+<button class="btn" onclick="pesan('Kasut Sneakers',89)">Pilih & Pesan</button>
+
+</div>
+
+<div class="product">
+
+<div class="emoji">👞</div>
+
+<h3>Kasut Kasual</h3>
+
+<p class="price">RM 69</p>
+
+<button class="btn" onclick="pesan('Kasut Kasual',69)">Pilih & Pesan</button>
+
+</div>
 
 </div>
 
 </section>
 
-<section style="text-align:center">
+<section class="info">
 
-<h2>Pesan Sekarang</h2>
+<h2>Bagaimana Membuat Pesanan?</h2>
 
-<p>Hubungi kami melalui WhatsApp untuk membuat pesanan.</p>
+<p>1. Pilih produk yang anda suka.</p>
 
-<p>Sila hubungi pemilik kedai untuk nombor WhatsApp.</p>
+<p>2. Tekan butang <b>Pilih & Pesan</b>.</p>
+
+<p>3. WhatsApp akan dibuka dengan maklumat produk anda.</p>
+
+<p><b>Sila semak pesanan dan hantar mesej kepada kami.</b></p>
+
+<button class="btn" onclick="hubungi()">Hubungi Kami di WhatsApp</button>
 
 </section>
+
+<p class="note">Harga dalam Ringgit Malaysia (RM). Sila sahkan stok dan harga sebelum membuat bayaran.</p>
 
 <footer>
 
@@ -110,9 +166,45 @@ small{color:#ddd}
 
 <p>Terima kasih kerana menyokong kedai kami.</p>
 
-<small>Fashion & Shoes · Malaysia</small>
-
 </footer>
+
+<script>
+
+const nomborWhatsApp = "60146198100";
+
+function bukaWhatsApp(mesej){
+
+  const pautan = "https://wa.me/" + nomborWhatsApp +
+
+    "?text=" + encodeURIComponent(mesej);
+
+  window.location.href = pautan;
+
+}
+
+function pesan(nama, harga){
+
+  const mesej = "Assalamualaikum QALISTA STORE! Saya berminat untuk memesan:\n\n" +
+
+    "Produk: " + nama + "\n" +
+
+    "Harga: RM " + harga + "\n" +
+
+    "Kuantiti: 1\n\n" +
+
+    "Adakah produk ini masih tersedia? Terima kasih.";
+
+  bukaWhatsApp(mesej);
+
+}
+
+function hubungi(){
+
+  bukaWhatsApp("Assalamualaikum QALISTA STORE! Saya ingin bertanya tentang produk anda.");
+
+}
+
+</script>
 
 </body>
 
