@@ -8,55 +8,477 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>QALISTA STORE | Fashion & Shoes</title>
 
+<meta name="description" content="Temui koleksi pakaian dan kasut QALISTA STORE. Pilih produk dan pesan melalui WhatsApp.">
+
 <style>
 
-*{box-sizing:border-box}
+:root {
 
-body{margin:0;font-family:Arial,sans-serif;background:#faf8f3;color:#28251f}
+  --black: #111111;
 
-header{background:#171717;color:#e8d49b;text-align:center;padding:26px 12px}
+  --white: #ffffff;
 
-header h1{letter-spacing:3px;margin:5px;font-size:27px}
+  --gold: #b3944d;
 
-header p{color:#fff;font-size:13px}
+  --cream: #f8f7f3;
 
-nav{background:#e8d49b;text-align:center;padding:13px;font-weight:bold}
+  --border: #e7e2d7;
 
-.hero{text-align:center;padding:45px 16px;background:#eee6d5}
+}
 
-.hero h2{font-size:30px;margin:0 0 12px}
+* { box-sizing: border-box; }
 
-.hero p{line-height:1.6}
+body {
 
-.btn{display:inline-block;background:#171717;color:white;padding:13px 20px;border:0;border-radius:7px;text-decoration:none;font-size:15px;cursor:pointer}
+  margin: 0;
 
-section{padding:25px 15px}
+  font-family: Arial, Helvetica, sans-serif;
 
-h2{text-align:center}
+  color: var(--black);
 
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  background: var(--cream);
 
-.product{background:white;border:1px solid #e4ddcf;border-radius:12px;padding:18px 10px;text-align:center;display:flex;flex-direction:column;align-items:center}
+}
 
-.emoji{font-size:55px;margin:8px}
+header {
 
-.product h3{font-size:19px;min-height:44px;margin:10px 0}
+  background: var(--black);
 
-.price{font-weight:bold;color:#8a6b24;font-size:20px;margin:8px 0 15px}
+  color: var(--white);
 
-.product button{width:100%;padding:12px 5px;font-size:13px}
+  padding: 22px 16px;
 
-.info{text-align:center;line-height:1.7}
+  text-align: center;
 
-footer{background:#171717;color:white;text-align:center;padding:25px}
+  border-bottom: 3px solid var(--gold);
 
-.note{font-size:12px;color:#666;text-align:center}
+}
 
-@media(min-width:650px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.logo {
+
+  margin: 0;
+
+  font-size: 27px;
+
+  letter-spacing: 4px;
+
+}
+
+.tagline {
+
+  color: #d9c58e;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  margin: 9px 0 0;
+
+}
+
+nav {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 22px;
+
+  padding: 14px 10px;
+
+  background: white;
+
+  border-bottom: 1px solid var(--border);
+
+  font-size: 13px;
+
+}
+
+nav a {
+
+  color: #222;
+
+  text-decoration: none;
+
+}
+
+.hero {
+
+  text-align: center;
+
+  padding: 48px 18px;
+
+  background: #eeece5;
+
+}
+
+.hero small {
+
+  color: #8b7136;
+
+  letter-spacing: 3px;
+
+  font-weight: bold;
+
+}
+
+.hero h2 {
+
+  font-size: clamp(30px, 7vw, 46px);
+
+  margin: 15px 0 12px;
+
+}
+
+.hero p {
+
+  color: #555;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+
+}
+
+.section {
+
+  padding: 30px 15px;
+
+  max-width: 1100px;
+
+  margin: auto;
+
+}
+
+.section-title {
+
+  text-align: center;
+
+  margin: 5px 0 25px;
+
+  font-size: 27px;
+
+}
+
+.products {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+}
+
+.product {
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  padding: 14px 10px;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+.product-image {
+
+  width: 100%;
+
+  height: 110px;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 65px;
+
+  background: #faf9f6;
+
+  border-radius: 8px;
+
+}
+
+.product h3 {
+
+  font-size: 16px;
+
+  min-height: 38px;
+
+  margin: 16px 0 7px;
+
+}
+
+.price {
+
+  color: #8c7034;
+
+  font-size: 21px;
+
+  font-weight: bold;
+
+  margin: 5px 0 14px;
+
+}
+
+button {
+
+  font: inherit;
+
+  cursor: pointer;
+
+}
+
+.add-button, .checkout, .contact-button {
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: var(--black);
+
+  color: white;
+
+  padding: 12px 10px;
+
+  width: 100%;
+
+  font-size: 13px;
+
+}
+
+.add-button {
+
+  margin-top: auto;
+
+}
+
+.add-button:active, .checkout:active {
+
+  background: #514324;
+
+}
+
+.cart {
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+}
+
+.cart-empty {
+
+  color: #777;
+
+  text-align: center;
+
+  padding: 15px 0;
+
+}
+
+.cart-item {
+
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 10px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+.cart-item-name {
+
+  font-weight: bold;
+
+  font-size: 14px;
+
+}
+
+.cart-item-price {
+
+  color: #80652d;
+
+  font-size: 13px;
+
+  margin-top: 5px;
+
+}
+
+.quantity {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 9px;
+
+}
+
+.quantity button {
+
+  width: 30px;
+
+  height: 30px;
+
+  background: white;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+}
+
+.remove {
+
+  border: none;
+
+  background: none;
+
+  color: #9b3434;
+
+  font-size: 12px;
+
+  margin-top: 7px;
+
+  padding: 4px 0;
+
+}
+
+.total-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  font-weight: bold;
+
+  font-size: 19px;
+
+  margin: 20px 0;
+
+}
+
+.total-row span:last-child {
+
+  color: #8c7034;
+
+}
+
+.checkout {
+
+  background: #168344;
+
+  font-size: 15px;
+
+  padding: 15px;
+
+}
+
+.checkout:disabled {
+
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+}
+
+.note {
+
+  color: #777;
+
+  font-size: 12px;
+
+  text-align: center;
+
+  line-height: 1.6;
+
+}
+
+.contact {
+
+  background: #eeece5;
+
+  text-align: center;
+
+  padding: 30px 18px;
+
+}
+
+.contact h2 {
+
+  margin-top: 0;
+
+}
+
+.contact-button {
+
+  max-width: 320px;
+
+  margin-top: 10px;
+
+  background: var(--black);
+
+}
+
+footer {
+
+  background: var(--black);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 22px 12px;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+}
+
+.gold { color: #d9c58e; }
+
+@media (min-width: 700px) {
+
+  .products { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .product { padding: 18px 14px; }
+
+  .product-image { height: 150px; }
+
+  .product h3 { font-size: 18px; }
+
+  .section { padding: 40px 22px; }
+
+  .cart { max-width: 760px; margin: auto; padding: 25px; }
+
+}
 
 </style>
 
@@ -66,143 +488,387 @@ footer{background:#171717;color:white;text-align:center;padding:25px}
 
 <header>
 
-<h1>QALISTA STORE</h1>
+  <h1 class="logo">QALISTA STORE</h1>
 
-<p>FASHION • CLOTHING • SHOES</p>
+  <p class="tagline">FASHION • SHOES • EVERYDAY STYLE</p>
 
 </header>
 
-<nav>Gaya Pilihan Anda · Harga dalam RM</nav>
+<nav>
 
-<div class="hero">
+  <a href="#home">Utama</a>
 
-<h2>Gaya Menarik, Harga Berpatutan</h2>
+  <a href="#produk">Koleksi</a>
 
-<p>Temui koleksi pakaian dan kasut pilihan anda.</p>
+  <a href="#troli">Troli (<span id="cart-count">0</span>)</a>
 
-<a class="btn" href="#produk">Lihat Koleksi</a>
+</nav>
 
-</div>
+<section class="hero" id="home">
 
-<section id="produk">
+  <small>KOLEKSI PILIHAN</small>
 
-<h2>Koleksi Kami</h2>
+  <h2>Simple. Stylish. You.</h2>
 
-<div class="products">
+  <p>Lengkapkan gaya harian anda dengan koleksi<br>
 
-<div class="product">
+  pakaian dan kasut daripada QALISTA STORE.</p>
 
-<div class="emoji">👕</div>
+  <a href="#produk" style="display:inline-block;background:#111;color:white;text-decoration:none;padding:13px 24px;border-radius:6px;margin-top:8px">
 
-<h3>Baju Kasual</h3>
+    Lihat Koleksi
 
-<p class="price">RM 35</p>
-
-<button class="btn" onclick="pesan('Baju Kasual',35)">Pilih & Pesan</button>
-
-</div>
-
-<div class="product">
-
-<div class="emoji">👗</div>
-
-<h3>Baju Wanita</h3>
-
-<p class="price">RM 49</p>
-
-<button class="btn" onclick="pesan('Baju Wanita',49)">Pilih & Pesan</button>
-
-</div>
-
-<div class="product">
-
-<div class="emoji">👟</div>
-
-<h3>Kasut Sneakers</h3>
-
-<p class="price">RM 89</p>
-
-<button class="btn" onclick="pesan('Kasut Sneakers',89)">Pilih & Pesan</button>
-
-</div>
-
-<div class="product">
-
-<div class="emoji">👞</div>
-
-<h3>Kasut Kasual</h3>
-
-<p class="price">RM 69</p>
-
-<button class="btn" onclick="pesan('Kasut Kasual',69)">Pilih & Pesan</button>
-
-</div>
-
-</div>
+  </a>
 
 </section>
 
-<section class="info">
+<section class="section" id="produk">
 
-<h2>Bagaimana Membuat Pesanan?</h2>
+  <h2 class="section-title">Koleksi Kami</h2>
 
-<p>1. Pilih produk yang anda suka.</p>
+  <div class="products">
 
-<p>2. Tekan butang <b>Pilih & Pesan</b>.</p>
+    <article class="product">
 
-<p>3. WhatsApp akan dibuka dengan maklumat produk anda.</p>
+      <div class="product-image">👕</div>
 
-<p><b>Sila semak pesanan dan hantar mesej kepada kami.</b></p>
+      <h3>Baju Kasual</h3>
 
-<button class="btn" onclick="hubungi()">Hubungi Kami di WhatsApp</button>
+      <div class="price">RM 35</div>
+
+      <button class="add-button" onclick="addToCart('baju-kasual')">
+
+        + Tambah ke Troli
+
+      </button>
+
+    </article>
+
+    <article class="product">
+
+      <div class="product-image">👗</div>
+
+      <h3>Baju Wanita</h3>
+
+      <div class="price">RM 49</div>
+
+      <button class="add-button" onclick="addToCart('baju-wanita')">
+
+        + Tambah ke Troli
+
+      </button>
+
+    </article>
+
+    <article class="product">
+
+      <div class="product-image">👟</div>
+
+      <h3>Kasut Sneakers</h3>
+
+      <div class="price">RM 89</div>
+
+      <button class="add-button" onclick="addToCart('kasut-sneakers')">
+
+        + Tambah ke Troli
+
+      </button>
+
+    </article>
+
+    <article class="product">
+
+      <div class="product-image">👞</div>
+
+      <h3>Kasut Kasual</h3>
+
+      <div class="price">RM 69</div>
+
+      <button class="add-button" onclick="addToCart('kasut-kasual')">
+
+        + Tambah ke Troli
+
+      </button>
+
+    </article>
+
+  </div>
 
 </section>
 
-<p class="note">Harga dalam Ringgit Malaysia (RM). Sila sahkan stok dan harga sebelum membuat bayaran.</p>
+<section class="section" id="troli">
+
+  <h2 class="section-title">Troli Belian</h2>
+
+  <div class="cart">
+
+    <div id="cart-items">
+
+      <p class="cart-empty">Troli anda masih kosong.</p>
+
+    </div>
+
+    <div class="total-row">
+
+      <span>Jumlah</span>
+
+      <span id="cart-total">RM 0</span>
+
+    </div>
+
+    <button id="checkout-button" class="checkout"
+
+      onclick="checkoutWhatsApp()" disabled>
+
+      Pesan melalui WhatsApp
+
+    </button>
+
+    <p class="note">
+
+      Harga dalam Ringgit Malaysia (RM).<br>
+
+      Penghantaran dan pembayaran disahkan melalui WhatsApp.
+
+    </p>
+
+  </div>
+
+</section>
+
+<section class="contact" id="hubungi">
+
+  <h2>Perlukan Bantuan?</h2>
+
+  <p>Hubungi kami untuk pertanyaan tentang produk dan pesanan.</p>
+
+  <button class="contact-button" onclick="contactWhatsApp()">
+
+    Hubungi QALISTA STORE
+
+  </button>
+
+</section>
 
 <footer>
 
-<strong>QALISTA STORE</strong>
+  <strong class="gold">QALISTA STORE</strong><br>
 
-<p>Terima kasih kerana menyokong kedai kami.</p>
+  Fashion & Shoes<br>
+
+  © <span id="year"></span> QALISTA STORE. All rights reserved.
 
 </footer>
 
 <script>
 
-const nomborWhatsApp = "60146198100";
+const whatsappNumber = "60146198100";
 
-function bukaWhatsApp(mesej){
+const products = {
 
-  const pautan = "https://wa.me/" + nomborWhatsApp +
+  "baju-kasual": { name: "Baju Kasual", price: 35 },
 
-    "?text=" + encodeURIComponent(mesej);
+  "baju-wanita": { name: "Baju Wanita", price: 49 },
 
-  window.location.href = pautan;
+  "kasut-sneakers": { name: "Kasut Sneakers", price: 89 },
+
+  "kasut-kasual": { name: "Kasut Kasual", price: 69 }
+
+};
+
+let cart = {};
+
+function formatRM(amount) {
+
+  return "RM " + amount.toLocaleString("en-MY", {
+
+    minimumFractionDigits: 2,
+
+    maximumFractionDigits: 2
+
+  });
+
+}
+
+function addToCart(id) {
+
+  if (!products[id]) return;
+
+  cart[id] = (cart[id] || 0) + 1;
+
+  renderCart();
+
+  document.getElementById("troli").scrollIntoView({
+
+    behavior: "smooth",
+
+    block: "start"
+
+  });
 
 }
 
-function pesan(nama, harga){
+function changeQuantity(id, amount) {
 
-  const mesej = "Assalamualaikum QALISTA STORE! Saya berminat untuk memesan:\n\n" +
+  if (!cart[id]) return;
 
-    "Produk: " + nama + "\n" +
+  cart[id] += amount;
 
-    "Harga: RM " + harga + "\n" +
+  if (cart[id] <= 0) delete cart[id];
 
-    "Kuantiti: 1\n\n" +
-
-    "Adakah produk ini masih tersedia? Terima kasih.";
-
-  bukaWhatsApp(mesej);
+  renderCart();
 
 }
 
-function hubungi(){
+function removeItem(id) {
 
-  bukaWhatsApp("Assalamualaikum QALISTA STORE! Saya ingin bertanya tentang produk anda.");
+  delete cart[id];
+
+  renderCart();
 
 }
+
+function renderCart() {
+
+  const container = document.getElementById("cart-items");
+
+  const ids = Object.keys(cart);
+
+  let total = 0;
+
+  let count = 0;
+
+  if (ids.length === 0) {
+
+    container.innerHTML =
+
+      '<p class="cart-empty">Troli anda masih kosong.</p>';
+
+  } else {
+
+    container.innerHTML = ids.map(id => {
+
+      const product = products[id];
+
+      const qty = cart[id];
+
+      const subtotal = product.price * qty;
+
+      total += subtotal;
+
+      count += qty;
+
+      return `
+
+        <div class="cart-item">
+
+          <div>
+
+            <div class="cart-item-name">${product.name}</div>
+
+            <div class="cart-item-price">
+
+              ${formatRM(product.price)} seunit
+
+            </div>
+
+            <div class="quantity">
+
+              <button aria-label="Kurangkan ${product.name}"
+
+                onclick="changeQuantity('${id}', -1)">−</button>
+
+              <span>${qty}</span>
+
+              <button aria-label="Tambah ${product.name}"
+
+                onclick="changeQuantity('${id}', 1)">+</button>
+
+            </div>
+
+            <button class="remove"
+
+              onclick="removeItem('${id}')">Buang produk</button>
+
+          </div>
+
+          <strong>${formatRM(subtotal)}</strong>
+
+        </div>`;
+
+    }).join("");
+
+  }
+
+  document.getElementById("cart-total").textContent = formatRM(total);
+
+  document.getElementById("cart-count").textContent = count;
+
+  document.getElementById("checkout-button").disabled = ids.length === 0;
+
+}
+
+function checkoutWhatsApp() {
+
+  const ids = Object.keys(cart);
+
+  if (ids.length === 0) {
+
+    alert("Sila tambah produk ke troli dahulu.");
+
+    return;
+
+  }
+
+  let total = 0;
+
+  let message = "Assalamualaikum QALISTA STORE! Saya ingin membuat pesanan:\n\n";
+
+  ids.forEach(id => {
+
+    const product = products[id];
+
+    const qty = cart[id];
+
+    const subtotal = product.price * qty;
+
+    total += subtotal;
+
+    message += product.name + "\n";
+
+    message += "Harga: " + formatRM(product.price) + "\n";
+
+    message += "Kuantiti: " + qty + "\n";
+
+    message += "Subtotal: " + formatRM(subtotal) + "\n\n";
+
+  });
+
+  message += "JUMLAH PESANAN: " + formatRM(total) + "\n\n";
+
+  message += "Sila sahkan stok, kos penghantaran dan cara pembayaran. Terima kasih!";
+
+  const url = "https://wa.me/" + whatsappNumber +
+
+    "?text=" + encodeURIComponent(message);
+
+  window.location.href = url;
+
+}
+
+function contactWhatsApp() {
+
+  const message = "Assalamualaikum QALISTA STORE! Saya ingin bertanya tentang produk anda.";
+
+  window.location.href = "https://wa.me/" + whatsappNumber +
+
+    "?text=" + encodeURIComponent(message);
+
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderCart();
 
 </script>
 
